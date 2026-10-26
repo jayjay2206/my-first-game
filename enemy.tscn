@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://chw13cv55fx31"]
+
+[ext_resource type="Script" uid="uid://diaotikqlfllb" path="res://enemy.gd" id="1_7k104"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hj3q"]
+size = Vector2(30, 50)
+
+[node name="Enemy" type="Area2D" unique_id=1975609234]
+script = ExtResource("1_7k104")
+
+[node name="EnemyBody" type="ColorRect" parent="." unique_id=154434492]
+offset_left = -15.0
+offset_top = -25.0
+offset_right = 15.0
+offset_bottom = 25.0
+color = Color(0.07275421, 0.5708259, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1378644008]
+shape = SubResource("RectangleShape2D_0hj3q")
+
+[node name="EnemySprite" type="Sprite2D" parent="." unique_id=281195743]
+
+[node name="Wheel1" type="ColorRect" parent="." unique_id=477152350]
+offset_left = -19.0
+offset_top = -18.0
+offset_right = -13.0
+offset_bottom = -6.0
+color = Color(0, 0, 0, 1)
+
+[node name="Wheel2" type="ColorRect" parent="." unique_id=2076453298]
+offset_left = 13.0
+offset_top = -18.0
+offset_right = 19.0
+offset_bottom = -6.0
+color = Color(0, 0, 0, 1)
+
+[node name="Wheel3" type="ColorRect" parent="." unique_id=1343552253]
+offset_left = -19.0
+offset_top = 8.0
+offset_right = -13.0
+offset_bottom = 20.0
+color = Color(0, 0, 0, 1)
+
+[node name="Wheel4" type="ColorRect" parent="." unique_id=2106625870]
+offset_left = 13.0
+offset_top = 8.0
+offset_right = 19.0
+offset_bottom = 20.0
+color = Color(0, 0, 0, 1)
+
+[node name="Window" type="ColorRect" parent="." unique_id=167391732]
+offset_left = -10.0
+offset_top = -15.0
+offset_right = 10.0
+offset_bottom = -2.0
+color = Color(0.75296867, 0.7053072, 0.9874597, 0.4509804)
+
+[node name="RareWindow" type="ColorRect" parent="." unique_id=477979421]
+offset_left = -10.0
+offset_top = 7.0
+offset_right = 10.0
+offset_bottom = 17.0
+color = Color(0.5228241, 0.45632935, 0.9903533, 1)
+
+[node name="Light1" type="ColorRect" parent="." unique_id=2032290496]
+offset_left = -11.0
+offset_top = -24.0
+offset_right = -6.0
+offset_bottom = -21.0
+color = Color(0.9507659, 0.74376345, 0.14311704, 1)
+
+[node name="Light2" type="ColorRect" parent="." unique_id=350798529]
+offset_left = 4.0
+offset_top = -24.0
+offset_right = 9.0
+offset_bottom = -21.0
+color = Color(0.9507659, 0.74376345, 0.14311704, 1)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

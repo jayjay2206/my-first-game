@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://p407m5jp6l40"]
+
+[ext_resource type="Script" uid="uid://dl4231hois6hi" path="res://main.gd" id="1_r0du0"]
+[ext_resource type="PackedScene" uid="uid://c3iwci0iaj57s" path="res://Player.tscn" id="1_uu6xs"]
+[ext_resource type="PackedScene" uid="uid://chw13cv55fx31" path="res://enemy.tscn" id="2_r0du0"]
+[ext_resource type="Script" uid="uid://ci44uyytt8xdk" path="res://GameManager.gd" id="4_cm0pq"]
+
+[node name="Main" type="Node2D" unique_id=660318624]
+script = ExtResource("1_r0du0")
+
+[node name="Road" type="ColorRect" parent="." unique_id=1475296573]
+offset_left = 200.0
+offset_right = 600.0
+offset_bottom = 720.0
+color = Color(0.5729883, 0.5729883, 0.5729883, 1)
+
+[node name="Dash1" type="ColorRect" parent="Road" unique_id=86872323]
+layout_mode = 0
+offset_left = 195.0
+offset_top = 30.0
+offset_right = 205.0
+offset_bottom = 70.0
+
+[node name="Dash2" type="ColorRect" parent="Road" unique_id=731756483]
+layout_mode = 0
+offset_left = 195.0
+offset_top = 110.0
+offset_right = 205.0
+offset_bottom = 150.0
+
+[node name="Dash3" type="ColorRect" parent="Road" unique_id=1267429931]
+layout_mode = 0
+offset_left = 195.0
+offset_top = 190.0
+offset_right = 205.0
+offset_bottom = 230.0
+
+[node name="Dash4" type="ColorRect" parent="Road" unique_id=1506148997]
+layout_mode = 0
+offset_left = 195.0
+offset_top = 270.0
+offset_right = 205.0
+offset_bottom = 310.0
+
+[node name="Dash5" type="ColorRect" parent="Road" unique_id=264063477]
+layout_mode = 0
+offset_left = 195.0
+offset_top = 350.0
+offset_right = 205.0
+offset_bottom = 390.0
+
+[node name="Dash6" type="ColorRect" parent="Road" unique_id=1957660138]
+layout_mode = 0
+offset_left = 195.0
+offset_top = 430.0
+offset_right = 205.0
+offset_bottom = 470.0
+
+[node name="Dash7" type="ColorRect" parent="Road" unique_id=1254594907]
+layout_mode = 0
+offset_left = 193.0
+offset_top = 562.0
+offset_right = 203.0
+offset_bottom = 602.0
+
+[node name="Dash8" type="ColorRect" parent="Road" unique_id=1002185788]
+layout_mode = 0
+offset_left = 194.0
+offset_top = 497.0
+offset_right = 204.0
+offset_bottom = 537.0
+
+[node name="Player" parent="." unique_id=1782307218 instance=ExtResource("1_uu6xs")]
+position = Vector2(286, 501)
+
+[node name="GameManager" type="Node" parent="." unique_id=613401428]
+script = ExtResource("4_cm0pq")
+
+[node name="GameOverScreen" type="CanvasLayer" parent="." unique_id=795781978]
+process_mode = 2
+visible = false
+
+[node name="Background" type="ColorRect" parent="GameOverScreen" unique_id=1026541441]
+offset_right = 800.0
+offset_bottom = 720.0
+color = Color(0.21187913, 0.21077093, 0.33912158, 1)
+
+[node name="RestartButton" type="Button" parent="GameOverScreen/Background" unique_id=310328545]
+layout_mode = 0
+offset_left = 330.0
+offset_top = 350.0
+offset_right = 470.0
+offset_bottom = 400.0
+text = "RESTART"
+
+[node name="Enemy" parent="." unique_id=1975609234 instance=ExtResource("2_r0du0")]
+position = Vector2(300, 100)
